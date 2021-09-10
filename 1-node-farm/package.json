@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "pretty": "prettier --write ."
+    "pretty": "npx prettier --write ."
   },
   "dependencies": {
     "slugify": "^1.6.0"

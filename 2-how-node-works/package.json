@@ -1,0 +1,19 @@
+{
+  "name": "how-node-works",
+  "version": "1.0.0",
+  "description": "Learning Node.js",
+  "type": "module",
+  "scripts": {
+    "event": "nodemon events.js",
+    "server": "nodemon server.js",
+    "loop": "nodemon event-loop.js",
+    "thread": "set UV_THREADPOOL_SIZE=1 & nodemon event-loop.js",
+    "pretty": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "prettier": "^2.4.0"
+  },
+  "author": "Ziyad Sameh",
+  "license": "ISC"
+}
