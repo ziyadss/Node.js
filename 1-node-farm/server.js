@@ -4,7 +4,11 @@ import { resolve } from 'path';
 import slugify from 'slugify';
 import { URL } from 'url';
 import replaceTemplate from './modules/replaceTemplate.js';
+//	in Node.js, '.js' needed for ES Modules, not for CommonJS
 
+//	resolve() is not needed for CommonJS, but I'm using ES Modules for module 1
+//	Will use CommonJS for module 2 for practice, specially as it has sections
+//		on 'require' and 'module.exports'
 const __dirname = resolve();
 const hostName = 'localhost';
 const port = 8080;
@@ -81,5 +85,5 @@ createServer((req, res) => {
       res.end('<h1>Page not found.</h1>');
       break;
   }
-}).listen(port, () => console.log('Listening on port 8000...'));
+}).listen(port, hostName, () => console.log(`Listening on ${baseURL}...`));
 //	listen takes an optional second argument - the host name (eg. 127.0.0.1)

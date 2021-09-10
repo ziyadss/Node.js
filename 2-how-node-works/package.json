@@ -2,9 +2,10 @@
   "name": "how-node-works",
   "version": "1.0.0",
   "description": "Learning Node.js",
-  "type": "module",
   "scripts": {
-    "event": "nodemon events.js",
+    "module": "nodemon module.js",
+    "streams": "nodemon streams.js",
+    "events": "nodemon events.js",
     "server": "nodemon server.js",
     "loop": "nodemon event-loop.js",
     "thread": "set UV_THREADPOOL_SIZE=1 & nodemon event-loop.js",

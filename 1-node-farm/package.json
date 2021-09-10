@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Learning Node.js",
   "type": "module",
-  "main": "server.js",
+  "module": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "pretty": "npx prettier --write ."

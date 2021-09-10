@@ -1,5 +1,5 @@
-import { readFile } from 'fs';
-import { pbkdf2 } from 'crypto';
+const { readFile } = require('fs');
+const { pbkdf2 } = require('crypto');
 
 console.time('event-loop');
 console.timeLog('event-loop', 'First line');
