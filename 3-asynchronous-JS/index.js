@@ -8,10 +8,12 @@
 //     )
 //   );
 
-const { readFile, writeFile } = require('fs/promises');
-const axios = require('axios');
+import { readFile, writeFile } from 'fs/promises';
+import Axios from 'axios';
 
-const URL = 'https://dog.ceo/api/breed/{%BREED%}/images/random';
+const axios = Axios.create({ baseURL: 'https://dog.ceo/api/breed' });
+
+const URL = '{%BREED%}/images/random';
 
 readFile('dog.txt')
   .then((breed) => {
@@ -25,13 +27,13 @@ readFile('dog.txt')
   .then((responses) =>
     writeFile(
       'dog-imgs.txt',
-      responses.map((response) => response.data.message).join('\n')
+      responses.map(({ data }) => data.message).join('\n')
     )
   )
   .then(() => console.log('File saved'))
   .catch((err) => {
     console.log('Error: ', err.message);
-    if (err.response) console.log('Response: ', err.response.data);
+    if (response in error) console.log('Response: ', err.response.data);
   });
 
 // (async () => {

@@ -2,7 +2,8 @@
   "name": "asynchronous-js",
   "version": "1.0.0",
   "description": "Learning Node.js",
-  "main": "index.js",
+  "type": "module",
+  "module": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "pretty": "npx prettier --write ."
