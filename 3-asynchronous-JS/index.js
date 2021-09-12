@@ -32,8 +32,8 @@ readFile('dog.txt')
   )
   .then(() => console.log('File saved'))
   .catch((err) => {
-    console.log('Error: ', err.message);
-    if (response in error) console.log('Response: ', err.response.data);
+    console.error('Error: ', err.message);
+    if ('response' in err) console.error('Response: ', err.response.data);
   });
 
 // (async () => {
@@ -52,7 +52,7 @@ readFile('dog.txt')
 //     );
 //     console.log('File saved');
 //   } catch (err) {
-//     console.log('Error: ', err.message);
-//     if (err.response) console.log('Response: ', err.response.data);
+//     console.error('Error: ', err.message);
+//     if ('response' in err) console.error('Response: ', err.response.data);
 //   }
 // })();

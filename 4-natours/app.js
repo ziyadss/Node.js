@@ -1,20 +1,11 @@
-import express from 'express';
+const express = require('express');
+const morgan = require('morgan');
+const api = require('./api');
 
-import { readFileSync } from 'fs';
+const app = express();
 
-const port = 8080;
-const hostName = 'localhost';
-const baseURL = `http://${hostName}:${port}`;
+if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-const tours = JSON.parse(readFileSync('./dev-data/data/tours-simple.json'));
+app.use(express.json()).use(express.static('./public')).use('/api', api);
 
-express()
-  .get('/api/v1/tours', (_req, res) =>
-    res.status(200).json({
-      status: 'success',
-      results: tours.length,
-      data: { tours },
-    })
-  )
-  .post('/', (_req, res) => res.status(201).send('Posted!'))
-  .listen(port, hostName, () => console.log(`Server running at ${baseURL}`));
+module.exports = app;

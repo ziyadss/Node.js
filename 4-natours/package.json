@@ -2,15 +2,19 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "Learning Node.js, Express, and MongoDB",
-  "module": "app.js",
-  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=8.3.0"
+  },
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon server.js",
     "pretty": "npx prettier --write .",
     "lint": "npx eslint ."
   },
   "dependencies": {
-    "express": "^5.0.0-alpha.8"
+    "dotenv": "^10.0.0",
+    "express": "^5.0.0-alpha.8",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
@@ -18,6 +22,11 @@
     "eslint-plugin-node": "^11.1.0",
     "nodemon": "^2.0.12",
     "prettier": "^2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ziyadss/Node.js.git",
+    "directory": "4-natours"
   },
   "author": "Ziyad Sameh",
   "license": "ISC"
