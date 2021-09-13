@@ -1,8 +1,8 @@
 const { Router } = require('express');
-const users = require('./v1');
-const tours = require('./v2');
+const v1 = require('./v1');
+const v2 = require('./v2');
 
 const router = Router();
-router.use('/v1', users).use('/v2', tours);
+router.use('/v1', v1).use('/v2', v2);
 
 module.exports = router;
