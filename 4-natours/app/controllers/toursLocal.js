@@ -1,7 +1,9 @@
 const { readFileSync } = require('fs');
 const { writeFile } = require('fs/promises');
 
-const tours = JSON.parse(readFileSync('./dev-data/data/tours-simple.json'));
+const tours = JSON.parse(
+  readFileSync(`${__dirname}/../../dev-data/data/tours-simple.json`)
+);
 
 const validateTour = (req, res, next) => {
   const { name, price } = req.body;
@@ -47,7 +49,10 @@ const createTour = (req, res) => {
   const tour = { id, ...req.body };
   tours.push(tour);
 
-  writeFile('./dev-data/data/tours-simple.json', JSON.stringify(tours))
+  writeFile(
+    `${__dirname}/../../dev-data/data/tours-simple.json`,
+    JSON.stringify(tours)
+  )
     .then(() => res.status(201))
     .catch(() => res.status(202))
     .finally(() => res.json({ status: 'success', data: { tour } }));
@@ -58,7 +63,10 @@ const updateTour = (req, res) => {
   tours[tourIndex] = { ...tours[tourIndex], ...req.body };
   const tour = tours[tourIndex];
 
-  writeFile('./dev-data/data/tours-simple.json', JSON.stringify(tours))
+  writeFile(
+    `${__dirname}/../../dev-data/data/tours-simple.json`,
+    JSON.stringify(tours)
+  )
     .then(() => res.status(200))
     .catch(() => res.status(202))
     .finally(() => res.json({ status: 'success', data: { tour } }));
@@ -67,7 +75,10 @@ const updateTour = (req, res) => {
 const deleteTour = (req, res) => {
   tours.splice(res.locals.tourIndex, 1);
 
-  writeFile('./dev-data/data/tours-simple.json', JSON.stringify(tours))
+  writeFile(
+    `${__dirname}/../../dev-data/data/tours-simple.json`,
+    JSON.stringify(tours)
+  )
     .then(() => res.sendStatus(204))
     .catch(() => res.status(202))
     .finally(() => res.json({ status: 'success', data: null }));

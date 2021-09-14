@@ -1,11 +1,15 @@
 const express = require('express');
 const morgan = require('morgan');
-const api = require('./api');
+const routes = require('./routes');
 
+const { json, static } = express;
 const app = express();
 
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-app.use(express.json()).use(express.static('./public')).use('/api', api);
+app
+  .use(json())
+  .use(static(`${__dirname}/../public`))
+  .use(routes);
 
 module.exports = app;

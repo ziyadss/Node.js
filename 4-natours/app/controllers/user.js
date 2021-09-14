@@ -1,31 +1,31 @@
-const getAllUsers = (_req, res) => {
-  res
-    .status(500)
+async function getAllUsers(_req, res) {
+  return res
+    .status(501)
     .json({ status: 'error', message: 'This route is not yet implemented' });
-};
+}
 
-const getUser = (_req, res) => {
-  res
-    .status(500)
+async function getUser(_req, res) {
+  return res
+    .status(501)
     .json({ status: 'error', message: 'This route is not yet implemented' });
-};
+}
 
-const createUser = (_req, res) => {
-  res
-    .status(500)
+async function createUser(_req, res) {
+  return res
+    .status(501)
     .json({ status: 'error', message: 'This route is not yet implemented' });
-};
+}
 
-const updateUser = (_req, res) => {
-  res
-    .status(500)
+async function updateUser(_req, res) {
+  return res
+    .status(501)
     .json({ status: 'error', message: 'This route is not yet implemented' });
-};
+}
 
-const deleteUser = (_req, res) => {
-  res
-    .status(500)
+async function deleteUser(_req, res) {
+  return res
+    .status(501)
     .json({ status: 'error', message: 'This route is not yet implemented' });
-};
+}
 
 module.exports = { getAllUsers, getUser, createUser, updateUser, deleteUser };
