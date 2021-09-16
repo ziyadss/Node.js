@@ -1,7 +1,7 @@
 import { Router } from 'express';
-// import users from './routes/users';
 import tours from './routes/tours';
+import users from './routes/users';
 
-const router = Router().use('/tours', tours); // .use('/users', users);
+const router = Router().use('/users', users).use('/tours', tours);
 
 export default router;
