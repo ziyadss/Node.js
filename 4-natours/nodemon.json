@@ -1,1 +1,1 @@
-{ "ignore": ["dev-data/*", "output.json"] }
+{ "ignore": ["dev-data/*"] }
